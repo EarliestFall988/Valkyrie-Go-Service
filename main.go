@@ -8,12 +8,11 @@ import (
 )
 
 func main() {
+	// Test()
 	bootServer()
 }
 
 func bootServer() {
-
-	Test()
 
 	r := gin.Default()
 	r.LoadHTMLFiles("index.html")
@@ -33,7 +32,13 @@ func bootServer() {
 }
 
 func Test() {
-	result := TestFunction().Function()
+	result := NewFunction()
+	result.Function()
 
+	var t TypeDef = -1
+
+	result.TryGetVariableType("a", &t)
+
+	fmt.Println(t)
 	fmt.Println(result)
 }

@@ -1,10 +1,10 @@
 package main
 
-func TestFunction() *A_FunctionDefinition {
+func NewFunction() *A_FunctionDefinition {
 
 	name := "TestFunction"
-	expectedParameters := map[string]bool{"a": true, "b": true}
-	parameters := map[string]KeyTypeDefinition{"a": {Key: "a", Type: "int", Value: ""}, "b": {Key: "b", Type: "int", Value: ""}}
+	expectedParameters := map[string]ValueTypeDefinition{"a": {Type: Int, Applied: false}, "b": {Type: Int, Applied: false}}
+	parameters := map[string]KeyTypeDefinition{}
 
 	result := A_FunctionDefinition{Name: name, ExpectedParameters: expectedParameters, Parameters: parameters}
 
