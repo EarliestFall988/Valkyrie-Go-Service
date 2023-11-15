@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fmt"
 	"net/http"
 
 	"github.com/gin-gonic/gin"
@@ -11,6 +12,9 @@ func main() {
 }
 
 func bootServer() {
+
+	Test()
+
 	r := gin.Default()
 	r.LoadHTMLFiles("index.html")
 	r.GET("/ping", func(c *gin.Context) {
@@ -26,4 +30,10 @@ func bootServer() {
 	})
 
 	r.Run() // listen and serve on 0.0.0.0:8080 (for windows "localhost:8080")
+}
+
+func Test() {
+	result := TestFunction().Function()
+
+	fmt.Println(result)
 }
